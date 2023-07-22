@@ -46,6 +46,18 @@ ex ()
 # exports
 export PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
 
-# run neofetch!
-neofetch 2>/dev/null
 . "$HOME/.cargo/env"
+
+
+if [ -d "$HOME/.config/aliasrc" ]; then
+	for ALIASFILE in $HOME/.config/aliasrc/*; do
+		source $ALIASFILE
+	done
+fi
+
+# Load scripts
+if [ -d "$HOME/.config/scriptrc" ]; then
+	for SCRIPTFILE in $HOME/.config/scriptrc/*; do
+		source $SCRIPTFILE
+	done
+fi

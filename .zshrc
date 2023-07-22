@@ -181,8 +181,15 @@ bindkey '\eOF'  end-of-line
 
 # Load aliases and shortcuts if existent.
 if [ -d "$HOME/.config/aliasrc" ]; then
-	for ALIASFILE in $(ls $HOME/.config/aliasrc); do
-		source "$HOME/.config/aliasrc/$ALIASFILE"
+	for ALIASFILE in $HOME/.config/aliasrc/*; do
+		source $ALIASFILE
+	done
+fi
+
+# Load scripts
+if [ -d "$HOME/.config/scriptrc" ]; then
+	for SCRIPTFILE in $HOME/.config/scriptrc/*; do
+		source $SCRIPTFILE
 	done
 fi
 
