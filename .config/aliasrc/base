@@ -1,0 +1,3 @@
+# managing aliases
+alias aliases='cat ~/.config/aliasrc/*'
+alias editalias='vim ~/.config/aliasrc'

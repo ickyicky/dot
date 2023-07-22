@@ -1,0 +1,53 @@
+# Personal
+alias my='cd ~/Projects/Personal'
+alias ot='cd ~/Projects/Other'
+
+# KRAKEN
+alias set_kraken='sudo colctl --fan_speed 40 --pump_speed 80 -m Breathing -c 255,255,255 -cc 2 -c0 255,255,255 -c1 0,0,0'
+alias fast_kraken='sudo colctl --fan_speed 60 --pump_speed 90 -m Breathing -c 255,255,255 -cc 2 -c0 255,255,255 -c1 0,0,0'
+alias max_kraken='sudo colctl --fan_speed 100 --pump_speed 100 -m Breathing -c 255,255,255 -cc 2 -c0 255,255,255 -c1 0,0,0'
+
+# sorter
+alias srt='py /home/doman/Projects/Personal/folder_observer/observer.py -v --sort-old'
+
+# sync
+alias syncpi='~/Projects/Personal/services/syncpi.sh'
+
+# reload vertical
+alias rr="~/Projects/Personal/scripts/reload_vertical.sh"
+
+# resizer
+alias res="python3 ~/Projects/Personal/scripts/resizer.py"
+
+# android scrcpy and sndcpy
+alias andek="python3 ~/Projects/Personal/scripts/andek.py"
+
+# skirmish
+alias skm="cd ~/Projects/Personal/skirmish-online"
+
+# xdg-open
+[ "$(uname)" = "Darwin" ] || alias open='xdg-open'
+
+# stats
+alias startstats='python /home/doman/Projects/Personal/scripts/stats.py'
+
+# fasttyper
+alias ff='fasttyper'
+fff () {
+	while true; do
+		fortune | python -c "import sys; print(sys.stdin.read().split('--')[0].strip())" | python -m fasttyper || break
+	done
+}
+
+# genpswd
+alias genpswd="python -c \"import random, pyperclip; pyperclip.copy(''.join([chr(random.randrange(40,127)) for _ in range(40)]))\""
+
+# cds
+alias cm="cd /run/media/${USER}/*/"
+alias dwn="cd ${HOME}/Downloads"
+alias dcs="cd ${HOME}/Documents"
+alias pct="cd ${HOME}/Pictures"
+
+# killing
+alias killq="gsettings set org.gnome.desktop.wm.keybindings close \"['<Ctrl>q']\""
+alias nokillq="gsettings set org.gnome.desktop.wm.keybindings close \"['<Ctrl>F13']\""

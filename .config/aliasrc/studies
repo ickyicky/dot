@@ -1,0 +1,15 @@
+# Studies - Nextcloud
+alias stu='cd ~/Nextcloud/Studia'
+alias strak='stu && cd TRAK'
+alias sinz='stu && cd INZ'
+alias skoda='stu && cd KODA'
+alias smgr='stu && cd MGR'
+alias sporr='stu && cd PORR'
+alias spti='stu && cd PTI'
+alias strak='stu && cd TRAK'
+alias saso='stu && cd ASO'
+
+# Studies - Projects
+alias stud='cd ~/Projects/Studies'
+alias eng='stud && cd eng'
+alias mgr='stud && cd mgr'

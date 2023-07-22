@@ -1,0 +1,4 @@
+# thinkpad
+alias fsize='gsettings set org.gnome.desktop.interface text-scaling-factor'
+alias sfont='fsize "1.0"'
+alias bfont='fsize "1.9"'
