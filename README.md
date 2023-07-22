@@ -11,7 +11,7 @@ REPO_URL=git@github.com:ickyicky/dot.git
 git clone --bare $REPO_URL $HOME/.dot/
 alias dot="/usr/bin/git --git-dir=$HOME/.dot/ --work-tree=$HOME"
 dot config status.showUntrackedFiles no
-dot restore --staged .
+dot restore .
 source $HOME/.zshrc
 ```
 
