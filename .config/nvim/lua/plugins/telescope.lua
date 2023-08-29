@@ -16,6 +16,16 @@ return {
 				end,
 				desc = "Find File",
 			},
+			{
+				"<leader>fh",
+        "<cmd>Telescope harpoon marks<cr>",
+				desc = "Find harpoon",
+			},
+			{
+				"<leader>fb",
+        "<cmd>Telescope buffers<cr>",
+				desc = "Find buffer",
+			},
 		},
 		opts = {
 			defaults = {
@@ -33,6 +43,7 @@ return {
 			build = "make",
 			config = function()
 				require("telescope").load_extension("fzf")
+				require("telescope").load_extension("harpoon")
 			end,
 		},
 	},
