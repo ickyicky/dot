@@ -51,3 +51,6 @@ alias pct="cd ${HOME}/Pictures"
 # killing
 alias killq="gsettings set org.gnome.desktop.wm.keybindings close \"['<Ctrl>q']\""
 alias nokillq="gsettings set org.gnome.desktop.wm.keybindings close \"['<Ctrl>F13']\""
+
+# fooder
+alias fd='cd ~/Projects/Personal/fooder/api && source .venv/bin/activate && cd -'

@@ -44,15 +44,23 @@ return {
 
       lsp.ensure_installed(
         {
-          "pylsp",
+          "lua_ls",
           "ruff_lsp",
           "gopls",
+          "pylsp",
         }
       )
 
       lsp.on_attach(function(client, bufnr)
         lsp.default_keymaps({ buffer = bufnr })
       end)
+
+      local read_exec_path = function(exec_name)
+        local handle = io.popen("which " .. exec_name)
+        local result = handle:read("*a"):gsub("\n", "")
+        handle:close()
+        return result
+      end
 
       nvim_lsp = require("lspconfig")
       nvim_lsp.lua_ls.setup(lsp.nvim_lua_ls())
