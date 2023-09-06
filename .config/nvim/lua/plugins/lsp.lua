@@ -48,6 +48,7 @@ return {
           "ruff_lsp",
           "gopls",
           "pylsp",
+          "tsserver",
         }
       )
 
@@ -68,6 +69,7 @@ return {
       nvim_lsp.gopls.setup({})
       nvim_lsp.dartls.setup({})
       nvim_lsp.pylsp.setup({})
+      nvim_lsp.tsserver.setup({})
 
       lsp.setup()
     end,
