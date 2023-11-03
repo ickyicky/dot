@@ -54,3 +54,6 @@ alias nokillq="gsettings set org.gnome.desktop.wm.keybindings close \"['<Ctrl>F1
 
 # fooder
 alias fd='cd ~/Projects/Personal/fooder/api && source .venv/bin/activate'
+
+# ssh
+sshcd () { ssh -t "$1" "cd \"$2\"; exec \$SHELL -l"; }
