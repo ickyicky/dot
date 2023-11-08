@@ -85,6 +85,14 @@ vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format document"
 vim.keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code actions" })
 vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
 
+-- trouble
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { desc = "Trouble toggle" })
+vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = "Trouble workspace diagnostics" })
+vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = "Trouble document diagnostics" })
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Trouble quickfix" })
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { desc = "Trouble loclist" })
+vim.keymap.set("n", "<leader>gR", "<cmd>TroubleToggle lsp_references<cr>", { desc = "Trouble lsp references" })
+
 -- colorizer
 vim.keymap.set("n", "<leader>cs", "<cmd>ColorizerToggle<CR>", { desc = "Toggle show colors" })
 
