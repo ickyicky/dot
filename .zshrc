@@ -179,49 +179,12 @@ bindkey '^R' history-incremental-search-backward
 bindkey '\eOH'  beginning-of-line
 bindkey '\eOF'  end-of-line
 
-# Load aliases and shortcuts if existent.
-if [ -d "$HOME/.config/aliasrc" ]; then
-	for ALIASFILE in $HOME/.config/aliasrc/*; do
-		source $ALIASFILE
-	done
-fi
-
-# Load scripts
-if [ -d "$HOME/.config/scriptrc" ]; then
-	for SCRIPTFILE in $HOME/.config/scriptrc/*; do
-		source $SCRIPTFILE
-	done
-fi
-
 # IMPORTA
 if [ ! -z "$(which nvim 2>/dev/null)" ]; then
 	export EDITOR=nvim
 else
 	export EDITOR=vim
 fi
-
-# must have function!
-ex ()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
 
 # load plugins
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
@@ -243,30 +206,16 @@ export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"
 
-# Base16 Shell
-if ! {[ -n "$TMUX" ] || [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]}; then
-	BASE16_SHELL="$HOME/.config/base16-shell/"
-	source "$BASE16_SHELL/profile_helper.sh" 2>/dev/null
-	BASE16_SHELL_SET_BACKGROUND=false
+# Load aliases and shortcuts if existent.
+if [ -d "$HOME/.config/aliasrc" ]; then
+	for ALIASFILE in $HOME/.config/aliasrc/*; do
+		source $ALIASFILE
+	done
 fi
 
-if ! {[ -n "$TMUX" ] || [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]}; then
-	base16_ocean
-fi
-
-cached_neofetch ()
-{
-	# [ ! -z $HOME/.neofetch_cache ] && [ ! -z "$(which neofetch 2>/dev/null)" ] && neofetch > $HOME/.neofetch_cache
-	# cat $HOME/.neofetch_cache 2>/dev/null
-}
-
-# run neofetch or tmux if available
-if [ ! -z "$(which tmux 2>/dev/null)" ]; then
-	if [ -n "$TMUX" ] || [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-		cached_neofetch
-	else
-		exec tmux
-	fi
-else
-	cached_neofetch
+# Load scripts
+if [ -d "$HOME/.config/scriptrc" ]; then
+	for SCRIPTFILE in $HOME/.config/scriptrc/*; do
+		source $SCRIPTFILE
+	done
 fi
