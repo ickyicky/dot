@@ -198,7 +198,7 @@ bindkey '^l' autosuggest-accept
 export FZF_DEFAULT_OPTS="--reverse --bind change:first --bind ctrl-j:down,ctrl-k:up -i --cycle --header-first --border rounded"
 
 # exports - local bin, python, brew
-export PATH="$HOME/.local/bin:$HOME/.bin:/Users/$USER/Library/Python/3.9/bin:$HOME/Projects/Personal/scripts:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.bin:/Users/$USER/Library/Python/3.9/bin:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 # mysql client on macos
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
@@ -215,7 +215,7 @@ fi
 
 # Load scripts
 if [ -d "$HOME/.config/scriptrc" ]; then
-	for SCRIPTFILE in $HOME/.config/scriptrc/*; do
+	for SCRIPTFILE in $HOME/.config/scriptrc/*sh; do
 		source $SCRIPTFILE
 	done
 fi
