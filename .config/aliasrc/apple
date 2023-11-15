@@ -1,7 +1,9 @@
-setupmac() {
-	defaults write com.apple.dock expose-animation-duration -float 0.1
-	defaults write -g InitialKeyRepeat -int 12
-	defaults write -g KeyRepeat -int 1
-	defaults write com.apple.Dock autohide-delay -float 0; killall Dock
-	defaults write -g com.apple.mouse.scaling -integer -1
-}
+# parallels
+alias stoppar='pkill -SIGHUP -f /Applications/Parallels\ Desktop.app'
+alias startpar='open -a Parallels\ Desktop'
+alias startparra='hc && open -a Parallels\ Desktop'
+alias stopparra='hc && pkill -SIGHUP -f /Applications/Parallels\ Desktop.app'
+
+# docker
+alias startdocker='open -a Docker'
+alias stopdocker="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"

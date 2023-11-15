@@ -55,7 +55,3 @@ hlst() { history | tail --lines=1 | cut -d " " -f 4-; }
 cpy() { python -c "import sys, pyperclip; pyperclip.copy(sys.stdin.read().strip())"; }
 lstc() { lst | cpy; }
 hlstc() { hlst | cpy; }
-
-# docker
-alias startdocker='open -a Docker'
-alias stopdocker="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
