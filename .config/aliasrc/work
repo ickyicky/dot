@@ -3,36 +3,36 @@ WORK="$HOME/Projects/Work"
 UTIL="$HOME/Projects/Work/utility"
 BPS="$HOME/Projects/Work/BPS"
 PUB="$HOME/Projects/Work/publikator/"
-PUBS="$HOME/Projects/Work/publikator/publikator_server"
-PUBB="$HOME/Projects/Work/publikator/publikator_stable"
-PUBO="$HOME/Projects/Work/publikator/publikator_oracle"
-PUBC="$HOME/Projects/Work/publikator/publikator_cruz"
-PUBG="$HOME/Projects/Work/publikator/publikator_barlinek"
 AR="$HOME/Projects/Work/arriva_server/server"
-ARD="$HOME/Projects/Work/arriva_server/arriva_android"
-KOT="$HOME/Projects/Work/kotlin-base-server"
 KRD="$HOME/Projects/Work/robots/krd_syncer"
 NEG="$HOME/Projects/Work/negocjator/"
-NEGS="$HOME/Projects/Work/negocjator/negocjator_server"
-NEGO="$HOME/Projects/Work/negocjator/negocjator_ostrow"
-NEGN="$HOME/Projects/Work/negocjator/negocjator"
 
 # Workflow
 alias work="cd $WORK"
 alias util="cd $UTIL && make"
 alias bps="cd $BPS && make"
 alias pub="cd $PUB"
-alias pubs="cd $PUBS && source .venv/bin/activate && make"
-alias pubb="cd $PUBB && make"
-alias pubo="cd $PUBO && make"
-alias pubc="cd $PUBC && make"
-alias pubg="cd $PUBG && make"
 alias ar="cd $AR && make"
 alias arr="ar"
-alias ard="cd $ARD"
-alias kot="cd $KOT"
 alias krd="cd $KRD"
 alias neg="cd $NEG"
-alias nego="cd $NEGO && source .venv/bin/activate && make"
-alias negn="cd $NEGN && source .venv/bin/activate"
-alias negs="cd $NEGS"
+
+alias activate_venv="[ -f .venv/bin/activate ] && source .venv/bin/activate"
+alias display_makefile_help="[ -f Makefile ] && make"
+
+# dynamic aliases
+for d in $PUB/*; do
+    if [ -d "$d" ]; then
+      last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
+      last_part=${last_part:0:1}
+      alias pub$last_part="cd $d && display_makefile_help && activate_venv"
+    fi
+done
+
+for d in $NEG/*; do
+    if [ -d "$d" ]; then
+      last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
+      last_part=${last_part:0:1}
+      alias neg$last_part="cd $d && display_makefile_help && activate_venv"
+    fi
+done
