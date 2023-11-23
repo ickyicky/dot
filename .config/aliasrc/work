@@ -18,7 +18,7 @@ NEGO="$HOME/Projects/Work/negocjator/negocjator_ostrow"
 NEGN="$HOME/Projects/Work/negocjator/negocjator"
 
 # Workflow
-alias work="cd $WORK && make"
+alias work="cd $WORK"
 alias util="cd $UTIL && make"
 alias bps="cd $BPS && make"
 alias pub="cd $PUB"
