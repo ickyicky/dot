@@ -62,7 +62,11 @@ setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY 
 
 # Basic auto/tab complete:
-autoload -U compinit
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
