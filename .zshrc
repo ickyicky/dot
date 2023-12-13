@@ -202,7 +202,7 @@ bindkey '^l' autosuggest-accept
 export FZF_DEFAULT_OPTS="--reverse --bind change:first --bind ctrl-j:down,ctrl-k:up -i --cycle --header-first --border rounded"
 
 # exports - local bin, python, brew
-export PATH="$HOME/.local/bin:$HOME/.bin:/Users/$USER/Library/Python/3.9/bin:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.bin:/Users/$USER/Library/Python/3.9/bin:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.cargo/bin:$PATH"
 
 # mysql client on macos
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"

@@ -26,6 +26,13 @@ return {
         "<cmd>Telescope buffers<cr>",
 				desc = "Find buffer",
 			},
+			{
+				"<leader>fr",
+				function()
+					require("telescope.builtin").resume()
+				end,
+				desc = "Resume last search",
+			},
 		},
 		opts = {
 			defaults = {
