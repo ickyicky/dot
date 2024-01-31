@@ -18,38 +18,42 @@ alias activate_venv="[ -f .venv/bin/activate ] && source .venv/bin/activate"
 alias display_makefile_help="[ -f Makefile ] && make"
 
 # dynamic aliases
-for d in $PUB/*; do
-    if [ -d "$d" ]; then
-      last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
-      last_part=${last_part:0:1}
-      last_part=$(echo $last_part | tr '[:upper:]' '[:lower:]')
-      alias pub$last_part="cd $d && display_makefile_help && activate_venv"
-    fi
-done
+create_work_aliases() {
+  for d in $PUB/*; do
+      if [ -d "$d" ]; then
+        last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
+        last_part=${last_part:0:1}
+        last_part=$(echo $last_part | tr '[:upper:]' '[:lower:]')
+        alias pub$last_part="cd $d && display_makefile_help && activate_venv"
+      fi
+  done
 
-for d in $NEG/*; do
-    if [ -d "$d" ]; then
-      last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
-      last_part=${last_part:0:1}
-      last_part=$(echo $last_part | tr '[:upper:]' '[:lower:]')
-      alias neg$last_part="cd $d && display_makefile_help && activate_venv"
-    fi
-done
+  for d in $NEG/*; do
+      if [ -d "$d" ]; then
+        last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
+        last_part=${last_part:0:1}
+        last_part=$(echo $last_part | tr '[:upper:]' '[:lower:]')
+        alias neg$last_part="cd $d && display_makefile_help && activate_venv"
+      fi
+  done
 
-for d in $SZ/*; do
-    if [ -d "$d" ]; then
-      last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
-      last_part=${last_part:0:2}
-      last_part=$(echo $last_part | tr '[:upper:]' '[:lower:]')
-      alias sz$last_part="cd $d && display_makefile_help && activate_venv"
-    fi
-done
+  for d in $SZ/*; do
+      if [ -d "$d" ]; then
+        last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
+        last_part=${last_part:0:2}
+        last_part=$(echo $last_part | tr '[:upper:]' '[:lower:]')
+        alias sz$last_part="cd $d && display_makefile_help && activate_venv"
+      fi
+  done
 
-for d in $AR/*; do
-    if [ -d "$d" ]; then
-      last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
-      last_part=${last_part:0:1}
-      last_part=$(echo $last_part | tr '[:upper:]' '[:lower:]')
-      alias ar$last_part="cd $d && display_makefile_help && activate_venv"
-    fi
-done
+  for d in $AR/*; do
+      if [ -d "$d" ]; then
+        last_part=$(basename $d | tr "_" " " | awk '{print $NF}')
+        last_part=${last_part:0:1}
+        last_part=$(echo $last_part | tr '[:upper:]' '[:lower:]')
+        alias ar$last_part="cd $d && display_makefile_help && activate_venv"
+      fi
+  done
+}
+
+create_work_aliases

@@ -1,5 +1,5 @@
-vim.api.nvim_set_keymap("n", "<leader>j", "<cmd>bprev<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>k", "<cmd>bnext<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bj", "<cmd>bprev<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bk", "<cmd>bnext<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "<C-p>", '"_dP', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>/", "gcc", { noremap = false, silent = true })
 vim.api.nvim_set_keymap(
@@ -102,3 +102,5 @@ vim.keymap.set('n', '<leader>uu', vim.cmd.UndotreeToggle, { desc = "Toggle undo 
 -- harpoon
 vim.keymap.set("n", "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "Harpoon Menu" })
 vim.keymap.set("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", { desc = "Harpoon Add File" })
+vim.keymap.set("n", "<leader>k", "<cmd>lua require('harpoon.ui').nav_next()<cr>", { desc = "Navigate to next harpoon file" })
+vim.keymap.set("n", "<leader>j", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", { desc = "Navigate to previous harpoon file" })
