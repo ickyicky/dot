@@ -7,3 +7,5 @@ alias stopparra='hc && pkill -SIGHUP -f /Applications/Parallels\ Desktop.app'
 # docker
 alias startdocker='open -a Docker'
 alias stopdocker="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
+alias sd='startdocker'
+alias ssd='startdocker'
