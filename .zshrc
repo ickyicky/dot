@@ -220,7 +220,7 @@ fi
 
 # Load scripts
 if [ -d "$HOME/.config/scriptrc" ]; then
-	for SCRIPTFILE in $HOME/.config/scriptrc/*sh; do
+	for SCRIPTFILE in $HOME/.config/scriptrc/*.sh; do
 		source $SCRIPTFILE
 	done
 fi

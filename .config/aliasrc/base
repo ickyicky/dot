@@ -1,3 +1,14 @@
 # managing aliases
-alias aliases='cat ~/.config/aliasrc/*'
 alias editalias='vim ~/.config/aliasrc'
+
+alias aliasrc='cd ~/.config/aliasrc'
+alias scriptrc='cd ~/.config/scriptrc'
+
+function falias() {
+  local al
+  al=$(alias | fzf)
+
+  if [ -n "$al" ]; then
+    echo $al
+  fi
+}

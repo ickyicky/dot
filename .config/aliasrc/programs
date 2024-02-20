@@ -2,56 +2,43 @@
 alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
+alias ff='fasttyper'
+
+# exit
+alias e='exit'
 
 # program shortcuts
-alias dc='docker-compose'
-alias e='exit'
 alias grep='grep --color=auto'
-alias killdocker='docker kill $(docker ps -q)'
-alias cleardocker='docker system prune && docker volume prune'
-alias balancedocker='sudo btrfs filesystem balance /var/lib/docker'
+
+# ls
 alias ls='exa --icons -g'
 alias ll='ls -lh'
 alias lls='ls -lhrs modified'
 alias la='ls -a'
 alias lla='ls -lha'
 alias l='ls'
+lst() { exa --no-icons --sort=time | head --lines=1; }
+
+# python
 alias py='python3'
 alias py3='python3'
 alias pip='python3 -m pip'
 alias ipy='ipython --TerminalInteractiveShell.editing_mode=vi --TerminalInteractiveShell.timeoutlen=0.2'
+
+# vim
 alias vim='nvim'
 alias v='vim'
 alias vv='vifm'
+
+# kitty
 if [ "$TERM" = "xterm-kitty" ]; then
 	alias kssh='kitty +kitten ssh'
 fi
 
-# pacman and yay
-alias spa='sudo pacman -S'
-alias spaa='sudo pacman -S --overwrite="*"'
-alias spu='sudo pacman -Syyuu'
-alias spm='sudo pacman -Syy'
-alias spr='sudo pacman -R'
-alias ys='yay -S'
-alias yss='yay -S  --overwrite="*"'
-alias yr='yay -R'
-alias yu='yay -Syyuu'
+# copy piped to clipboard
+cpy() { py -c "import sys, pyperclip; pyperclip.copy(sys.stdin.read().strip())"; }
 
-# brew
-alias bu='brew update && brew update --cask'
-alias bup='brew upgrade && brew upgrade --cask'
-alias bd='brew doctor'
-alias bp='brew pin'
-alias bi='brew install'
-alias bic='brew install --cask'
-
-# pandoc
-alias npandoc='pandoc --from markdown --template ~/.config/pandoc/eisvogel.tex'
-
-# other
-lst() { \ls --sort=time | head --lines=1; }
+# history
 hlst() { history | tail --lines=1 | cut -d " " -f 4-; }
-cpy() { python -c "import sys, pyperclip; pyperclip.copy(sys.stdin.read().strip())"; }
 lstc() { lst | cpy; }
 hlstc() { hlst | cpy; }

@@ -1,3 +1,0 @@
-# fun
-alias ='cat'
-alias toansi='python3 $HOME/Projects/Personal/image-to-ansi/image-to-ansi.py'

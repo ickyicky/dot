@@ -1,11 +1,7 @@
-# parallels
-alias stoppar='pkill -SIGHUP -f /Applications/Parallels\ Desktop.app'
-alias startpar='open -a Parallels\ Desktop'
-alias startparra='hc && open -a Parallels\ Desktop'
-alias stopparra='hc && pkill -SIGHUP -f /Applications/Parallels\ Desktop.app'
-
-# docker
-alias startdocker='open -a Docker'
-alias stopdocker="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
-alias sd='startdocker'
-alias ssd='startdocker'
+# macos specific aliases
+if [ "$(uname)" = "Darwin" ]; then
+  alias stoppar='pkill -SIGHUP -f /Applications/Parallels\ Desktop.app'
+  alias startpar='open -a Parallels\ Desktop'
+  alias startparra='hc && open -a Parallels\ Desktop'
+  alias stopparra='hc && pkill -SIGHUP -f /Applications/Parallels\ Desktop.app'
+fi
