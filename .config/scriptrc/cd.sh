@@ -5,7 +5,26 @@ function cd
     elif [ " $1" = " -" ]; then
         pushd "$OLDPWD" > /dev/null
     else
-        pushd "$@" > /dev/null
+        pushd "$1" > /dev/null
+    fi
+
+    if [ "$VIRTUAL_ENV" != "" ]; then
+      local venvpath=$(dirname $VIRTUAL_ENV)
+      case $PWD/ in
+        $venvpath/* ) ;;
+        *) deactivate;;
+      esac
+    fi
+
+    if [ -f .venv/bin/activate ]; then
+      source .venv/bin/activate
+    fi
+
+    if [ $# -gt 1 ]; then
+      if [ -f Makefile ]; then
+        make ${@:2}
+      else
+      fi
     fi
 }
 

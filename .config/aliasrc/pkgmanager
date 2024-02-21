@@ -1,0 +1,25 @@
+# pacman and yay
+if [ -x "$(which pacman)" ]; then
+  alias spa='sudo pacman -S'
+  alias spaa='sudo pacman -S --overwrite="*"'
+  alias spu='sudo pacman -Syyuu'
+  alias spm='sudo pacman -Syy'
+  alias spr='sudo pacman -R'
+fi
+
+if [ -x "$(which yay)" ]; then
+  alias ys='yay -S'
+  alias yss='yay -S  --overwrite="*"'
+  alias yr='yay -R'
+  alias yu='yay -Syyuu'
+fi
+
+# brew
+if [ -x "$(which pacman)" ]; then
+  alias bu='brew update && brew update --cask'
+  alias bup='brew upgrade && brew upgrade --cask'
+  alias bd='brew doctor'
+  alias bp='brew pin'
+  alias bi='brew install'
+  alias bic='brew install --cask'
+fi

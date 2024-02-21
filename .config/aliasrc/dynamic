@@ -1,0 +1,4 @@
+# if .cache/aliases exists source it
+if [ -f $HOME/.cache/aliases ]; then
+  source $HOME/.cache/aliases
+fi

@@ -1,0 +1,16 @@
+# docker
+if [ -x "$(which docker)" ]; then
+  alias dc='docker-compose'
+
+  alias killdocker='docker kill $(docker ps -q)'
+  alias cleardocker='docker system prune && docker volume prune'
+  alias balancedocker='sudo btrfs filesystem balance /var/lib/docker'
+
+  # if macos i manage docker manually, because it drains battery and ram
+  if [ "$(uname)" = "Darwin" ]; then
+    alias startdocker='open -a Docker'
+    alias stopdocker="pkill -SIGHUP -f /Applications/Docker.app 'docker serve'"
+    alias sd='startdocker'
+    alias ssd='startdocker'
+  fi
+fi

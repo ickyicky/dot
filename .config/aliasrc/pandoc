@@ -1,0 +1,2 @@
+# pandoc
+alias npandoc='pandoc --from markdown --template ~/.config/pandoc/eisvogel.tex'
