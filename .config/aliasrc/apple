@@ -4,4 +4,7 @@ if [ "$(uname)" = "Darwin" ]; then
   alias startpar='open -a Parallels\ Desktop'
   alias startparra='hc && open -a Parallels\ Desktop'
   alias stopparra='hc && pkill -SIGHUP -f /Applications/Parallels\ Desktop.app'
+
+  alias sdim='curl "http://localhost:55777/set?name=U32U1WR6B&brightness=0.4"'
+  alias sm='curl "http://localhost:55777/set?name=U32U1WR6B&brightness=1.0"'
 fi
