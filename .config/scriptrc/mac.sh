@@ -3,7 +3,6 @@ setupmac() {
   defaults write -g InitialKeyRepeat -int 12
   defaults write -g KeyRepeat -int 1
   defaults write com.apple.Dock autohide-delay -float 0
-  defaults write -g com.apple.mouse.scaling -integer -1
 }
 
 function disable_hot_corners(){

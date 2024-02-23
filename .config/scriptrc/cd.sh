@@ -36,3 +36,5 @@ function cdd
         cd +$1
     fi
 }
+
+cd $PWD
