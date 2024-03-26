@@ -51,4 +51,6 @@ hc() {
 
 if [[ "$(uname)" == "Darwin" ]]; then
     check_ssh_add
+
+    export CHROME_EXECUTABLE='/Applications/Chromium.app/Contents/MacOS/Chromium'
 fi

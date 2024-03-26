@@ -83,9 +83,8 @@ return {
       lsp.ensure_installed(
         {
           "lua_ls",
-          "ruff_lsp",
           "gopls",
-          "pylsp",
+          "pyright",
           "tsserver",
         }
       )
@@ -103,10 +102,9 @@ return {
 
       nvim_lsp = require("lspconfig")
       nvim_lsp.lua_ls.setup(lsp.nvim_lua_ls())
-      nvim_lsp.ruff_lsp.setup({})
       nvim_lsp.gopls.setup({})
       nvim_lsp.dartls.setup({})
-      nvim_lsp.pylsp.setup({})
+      nvim_lsp.pyright.setup({})
       nvim_lsp.tsserver.setup({})
 
       lsp.setup()
