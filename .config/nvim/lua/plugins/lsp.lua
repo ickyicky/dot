@@ -84,7 +84,7 @@ return {
         {
           "lua_ls",
           "gopls",
-          "pyright",
+          "pylsp",
           "tsserver",
         }
       )
@@ -104,7 +104,7 @@ return {
       nvim_lsp.lua_ls.setup(lsp.nvim_lua_ls())
       nvim_lsp.gopls.setup({})
       nvim_lsp.dartls.setup({})
-      nvim_lsp.pyright.setup({})
+      nvim_lsp.pylsp.setup({})
       nvim_lsp.tsserver.setup({})
 
       lsp.setup()
