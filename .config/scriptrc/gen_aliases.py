@@ -5,6 +5,7 @@ from shutil import which
 
 IGNORE = ["go", "parallels", "tmp", "library"]
 MAX_DEPTH = 5
+ENDING_DIRS = [".git", ".svn", ".hg", ".venv"]
 
 
 def subdirs(path):
@@ -40,18 +41,9 @@ def process_dir(path, prefix="", depth=0):
     if depth >= MAX_DEPTH:
         return {}
 
-    if os.path.exists(os.path.join(path, ".git")):
-        # dont wanna go deepper into repo
-        return {}
-
-    if os.path.exists(os.path.join(path, ".hg")):
-        return {}
-
-    if os.path.exists(os.path.join(path, ".svn")):
-        return {}
-
-    if os.path.exists(os.path.join(path, ".venv")):
-        return {}
+    for subdir in ENDING_DIRS:
+        if os.path.exists(os.path.abspath(os.path.join(path, "..", subdir))):
+            return {}
 
     dirs = subdirs(path)
     if depth == 0:
