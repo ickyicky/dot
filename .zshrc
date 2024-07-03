@@ -31,6 +31,15 @@ zstyle ':vcs_info:git*' formats "%{${fg[cyan]}%}[%{${fg[green]}%}%s%{${fg[cyan]}
 zstyle ':vcs_info:hg*' formats "%{${fg[cyan]}%}[%{${fg[green]}%}%s%{${fg[cyan]}%}][%{${fg[blue]}%}%b%{${fg[yellow]}%}%m%u%c%{${fg[cyan]}%}]%{$reset_color%}"
 zstyle ':vcs_info:svn*' formats "%{${fg[cyan]}%}[%{${fg[green]}%}%s%{${fg[cyan]}%}][%{${fg[blue]}%}%b%{${fg[yellow]}%}%m%u%c%{${fg[cyan]}%}]%{$reset_color%}"
 
+case $TERM in
+  tmux-256color)
+    export TERM=xterm-256color
+    ;;
+  tmux*)
+    export TERM=xterm
+    ;;
+esac
+
 # Title
 case $TERM in
   termite|*xterm*|rxvt|rxvt-unicode|rxvt-256color|rxvt-unicode-256color|(dt|k|E)term|xterm-256color)
@@ -208,7 +217,7 @@ export PATH="$HOME/.local/bin:$HOME/.bin:/Users/$USER/Library/Python/3.9/bin:/op
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/opt/homebrew/opt/dotnet@6/bin:$PATH"
 export PATH="${HOME}/Library/Android/sdk/tools:${HOME}/Library/Android/sdk/platform-tools:${PATH}"
-export PATH="/Users/doman/go/bin/:$PATH"
+export PATH="${HOME}/go/bin/:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"

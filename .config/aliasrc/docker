@@ -1,6 +1,6 @@
 # docker
 if [ -x "$(which docker)" ]; then
-  alias dc='docker-compose'
+  alias dc='docker compose'
 
   alias killdocker='docker kill $(docker ps -q)'
   alias cleardocker='docker system prune && docker volume prune'
