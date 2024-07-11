@@ -207,9 +207,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 bindkey '^ ' autosuggest-accept
 bindkey '^l' autosuggest-accept
 
-# fzf settings
-export FZF_DEFAULT_OPTS="--reverse --bind change:first --bind ctrl-j:down,ctrl-k:up -i --cycle --header-first --border rounded"
-
 # exports - local bin, python, brew
 export PATH="$HOME/.local/bin:$HOME/.bin:/Users/$USER/Library/Python/3.9/bin:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.cargo/bin:$PATH"
 
