@@ -11,13 +11,16 @@ alias e='exit'
 alias grep='grep --color=auto'
 
 # ls
-alias ls='exa --icons -g'
+if [ -x "$(which exa)" ]; then
+  alias ls='exa --icons -g'
+  lst() { exa --no-icons --sort=time | head --lines=1; }
+fi
+
 alias ll='ls -lh'
 alias lls='ls -lhrs modified'
 alias la='ls -a'
 alias lla='ls -lha'
 alias l='ls'
-lst() { exa --no-icons --sort=time | head --lines=1; }
 
 # python
 alias py='python3'
@@ -26,7 +29,9 @@ alias pip='python3 -m pip'
 alias ipy='ipython --TerminalInteractiveShell.editing_mode=vi --TerminalInteractiveShell.timeoutlen=0.2'
 
 # vim
-alias vim='nvim'
+if [ -x "$(which nvim)" ]; then
+  alias vim='nvim'
+fi
 alias v='vim'
 alias vv='vifm'
 
